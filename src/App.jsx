@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-import Counter from './features/counter/Counter/';
+import PostsList from './features/posts/PostsList';
 
 
 
 export default function App() {
-    const [count, setCount] = useState(0);
     return(
-        <>
-           <Counter/> 
-        </>
+        <main className='App'>
+           <PostsList/>
+        </main>
     );
 };
