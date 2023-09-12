@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 
+import Counter from './features/counter/Counter/';
 
 
 
 export default function App() {
+    const [count, setCount] = useState(0);
     return(
         <>
-            <h1>Hello Redux!</h1>
+           <Counter/> 
         </>
     );
 };
