@@ -11,6 +11,8 @@ export default function AddPostForm() {
     const [userId, setUserId] = useState('');
     const onAuthorChanged = e => setUserId(e.target.value);
 
+    const allowPost = Boolean(userId) && Boolean(title) && Boolean(content);
+
     const users = useSelector((state)=> selectAllUsers(state));
 
     const usersOptions = users.map(user => (
@@ -18,6 +20,8 @@ export default function AddPostForm() {
             {user.name}
         </option>
     ));
+
+    
 
     const dispatch = useDispatch();
 
@@ -60,6 +64,7 @@ export default function AddPostForm() {
                 <button
                     type="button"
                     onClick={savePost}
+                    disabled = {!allowPost}
                 >Save Post</button>
             </form>
         </section>
